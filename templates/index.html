@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles.css">
+    <title>Turnover Prediction</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Turnover Prediction</h1>
+        <form action="/predict" method="POST">
+
+            <label for="date">Prediction Date:</label>
+            <input type="date" id="date" name="date" required><br><br>
+
+            <label for="region">Region:</label>
+            <select id="region" name="region" required>
+                <option value="Bayern">Bayern</option>
+                <option value="Niedersachsen">Niedersachsen</option>
+                <option value="Nordrhein-westfalen">Nordrhein-westfalen</option>
+                <option value="Baden-württemberg">Baden-württemberg</option>
+                <option value="Sachsen">Sachsen</option>
+                <option value="Rheinland-pfalz">Rheinland-pfalz</option>
+                <option value="Schleswig-holstein">Schleswig-holstein</option>
+                <option value="Hessen">Hessen</option>
+                <option value="Sachsen-anhalt">Sachsen-anhalt</option>
+                <option value="Saarland">Saarland</option>
+                <option value="Thüringen">Thüringen</option>
+                <option value="Brandenburg">Brandenburg</option>
+                <option value="Mecklenburg-vorpommern">Mecklenburg-vorpommern</option>
+                <option value="Berlin">Berlin</option>
+                <option value="Hamburg">Hamburg</option>
+                <option value="Bremen">Bremen</option>
+            </select><br><br>
+
+            
+            <label for="store_area">Store Area (sq. meters):</label>
+            <input type="number" step="0.01" id="store_area" name="store_area" required><br><br>
+
+            <label for="avg_temperature">Average Temperature (°C):</label>
+            <input type="number" step="0.01" id="avg_temperature" name="avg_temperature" required><br><br>
+
+            <label for="precipitation_mm">Precipitation (mm):</label>
+            <input type="number" step="0.01" id="precipitation_mm" name="precipitation_mm" required><br><br>
+
+            <label for="wind_speed_kmh">Wind Speed (km/h):</label>
+            <input type="number" step="0.01" id="wind_speed_kmh" name="wind_speed_kmh" required><br><br>
+
+            
+
+            <label for="model_choice">Choose Model:</label>
+            <select id="model_choice" name="model_choice">
+                <option value="LightGBM">LightGBM</option>
+                <option value="LSTM">LSTM</option>
+            </select><br><br>
+
+            <button type="submit">Predict Turnover</button>
+        </form>
+    </div>
+</body>
+</html>
